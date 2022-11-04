@@ -1,0 +1,208 @@
+:root {
+    --color-primary: #241338;
+    /* dark shades of primary color*/
+    --clr-primary-1: #4C536D;
+    --clr-primary-2: #373c4f;
+    --clr-primary-3: #374474;
+    --clr-primary-4: hsl(205, 63%, 48%);
+    /* primary/main color */
+    --clr-primary-5: hsl(205, 78%, 60%);
+    /* lighter shades of primary color */
+    --clr-primary-6: hsl(205, 89%, 70%);
+    --clr-primary-7: hsl(205, 90%, 76%);
+    --clr-primary-8: hsl(205, 86%, 81%);
+    --clr-primary-9: hsl(205, 90%, 88%);
+    --clr-primary-10: hsl(205, 100%, 96%);
+    /* darkest grey - used for headings */
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(262, 55%, 42%);
+    /* grey used for paragraphs */
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(210, 36%, 96%);
+    --clr-white: #fff;
+    --clr-red-dark: #a30a0f;
+    --clr-red-2: #c6181e;
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black: #222;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+    --container-width-lg: 76%;
+    /*big screen*/
+    --container-width-md: 90%;
+    /*tablette*/
+    --container-width-sm: 94%;
+    /*phone*/
+    --ff-primary: 'Poppins', sans-serif;
+    --transition: all 400ms ease;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+}
+
+.contact {
+    height: 150vh;
+}
+
+.contact_container {
+    display: flex;
+    gap: 0rem;
+    margin-top: 10rem;
+}
+
+.contact_aside {
+    width: 30%;
+    padding: 1.5rem;
+    background: var(--clr-white);
+    color: #1652C0;
+    margin-top: 0%;
+    border-radius: 2rem;
+    justify-content: center;
+    position: absolute;
+    transform: translateX(20%);
+    z-index: 10;
+}
+
+li {
+    display: flex;
+    gap: 1.8rem;
+}
+
+.contact_aside h2 {
+    padding-top: 2rem;
+    color: #E33942;
+    margin-bottom: 0rem;
+}
+
+.contact_aside p {
+    line-height: 1.6;
+    padding: 2rem 0 2rem;
+}
+
+.contact_list a {
+    font-size: 1.2rem;
+    color: red;
+}
+
+.contact_socials {
+    display: flex;
+    padding: 2rem 0 1rem;
+    justify-content: center;
+    transition: var(--transition);
+    gap: 0.8rem;
+}
+
+.contact_socials a {
+    padding: 0.4rem;
+    border-radius: 50%;
+    background-color: #FF5353;
+}
+
+form {
+    background: #8dabcb;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    border-radius: 2rem;
+    padding: 4rem 2rem 4rem;
+    padding-left: 50%;
+    top: 10rem;
+    gap: 1rem;
+}
+
+
+/* this is how to acccess the input type */
+
+form input[type="text"] {
+    width: 50%;
+}
+
+.form_name {
+    display: flex;
+    gap: 0.8rem;
+}
+
+input {
+    background: var(--clr-primary-1);
+    border-radius: 0.5rem;
+    color: var(--clr-white);
+}
+
+input,
+textarea {
+    background: var(--clr-primary-1);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: var(--clr-white);
+}
+
+::placeholder {
+    color: var(--clr-white);
+}
+
+.btn-primary {
+    /* in order to make the button fit the content */
+    width: max-content;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+@media screen and (max-width:1024px) {
+    .contact {
+        height: fit-content;
+    }
+    .container {
+        width: var(--container-width-md);
+    }
+    form {
+        padding-left: 50%;
+        padding-bottom: 50%;
+        margin-bottom: 0;
+        top: 0rem;
+        gap: 1rem;
+    }
+    .contact_container {
+        margin-top: 3rem;
+        margin-bottom: 0rem;
+    }
+    .contact_aside {
+        width: 40%;
+        margin-top: 5%;
+        margin-bottom: 0;
+        height: min-content;
+        transform: translateX(8%);
+        z-index: 10;
+        overflow: hidden;
+    }
+    .contact_aside h2 {
+        padding-top: 0rem;
+    }
+    .contact_aside p {
+        line-height: 1;
+        padding: 0.8rem 0 0.8rem;
+    }
+    .contact_list a {
+        font-size: 1rem;
+    }
+    .contact_socials {
+        padding: 1rem 0 0.5rem;
+    }
+    li {
+        gap: 0.8rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    body {
+        background: blue;
+    }
+}

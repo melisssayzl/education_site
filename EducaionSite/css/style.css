@@ -1,0 +1,797 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    /*lines one the buttons*/
+    outline: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+/*variables in CSS*/
+
+:root {
+    --color-primary: #241338;
+    /* dark shades of primary color*/
+    --clr-primary-1: #4C536D;
+    --clr-primary-2: #373c4f;
+    --clr-primary-3: #374474;
+    --clr-primary-4: hsl(205, 63%, 48%);
+    /* primary/main color */
+    --clr-primary-5: hsl(205, 78%, 60%);
+    /* lighter shades of primary color */
+    --clr-primary-6: hsl(205, 89%, 70%);
+    --clr-primary-7: hsl(205, 90%, 76%);
+    --clr-primary-8: hsl(205, 86%, 81%);
+    --clr-primary-9: hsl(205, 90%, 88%);
+    --clr-primary-10: hsl(205, 100%, 96%);
+    /* darkest grey - used for headings */
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(262, 55%, 42%);
+    /* grey used for paragraphs */
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(210, 36%, 96%);
+    --clr-white: #fff;
+    --clr-red-dark: #a30a0f;
+    --clr-red-2: #c6181e;
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black: #222;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+    --container-width-lg: 76%;
+    /*big screen*/
+    --container-width-md: 90%;
+    /*tablette*/
+    --container-width-sm: 94%;
+    /*phone*/
+    --ff-primary: 'Poppins', sans-serif;
+    --transition: all 400ms ease;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+}
+
+body {
+    font-family: var(--ff-primary);
+    /*l'space entre les lignes de la liste*/
+    line-height: 2;
+    color: var(--clr-white);
+    background: var(--clr-primary-1);
+}
+
+.container {
+    width: var(--container-width-lg);
+    /*So in margin: 0 auto, the top/bottom margin is 0, and the left/right margin is auto, Where auto means that the left and right margin are automatically set by the browser based on the container, to make element centered.*/
+    margin: 0 auto;
+}
+
+section {
+    /* 6 top and bottom , 0 for the left and right*/
+    /*1rem = 16px*/
+    padding: 6rem 0;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+
+/*given to every link*/
+
+a {
+    color: var( --clr-white);
+}
+
+.normal {
+    mix-blend-mode: normal;
+}
+
+.multiply {
+    mix-blend-mode: multiply;
+}
+
+.screen {
+    mix-blend-mode: screen;
+}
+
+.overlay {
+    mix-blend-mode: overlay;
+}
+
+.darken {
+    mix-blend-mode: darken;
+}
+
+.lighten {
+    mix-blend-mode: lighten;
+}
+
+.color-dodge {
+    mix-blend-mode: color-dodge;
+}
+
+.color-burn {
+    mix-blend-mode: color-burn;
+}
+
+.difference {
+    mix-blend-mode: difference;
+}
+
+.exclusion {
+    mix-blend-mode: exclusion;
+}
+
+.hue {
+    mix-blend-mode: hue;
+}
+
+.saturation {
+    mix-blend-mode: saturation;
+}
+
+.color {
+    mix-blend-mode: color;
+}
+
+.luminosity {
+    mix-blend-mode: luminosity;
+}
+
+img {
+    width: 100%;
+    display: block;
+    /* mix-blend-mode: lighten; */
+    /* the image keeps its aspect ratio and fills the given dimension. The image will be clipped to fit*/
+    object-fit: cover;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--clr-grey-9);
+    color: var(--clr-black);
+    /*1 top bottom , 2left right*/
+    padding: 1rem 2rem;
+    /*usually use dfor buttons*/
+    border: 1px solid transparent;
+    /*bold apippri : 700 , normal 400*/
+    font-weight: 500;
+    font-size: 1.3rem;
+    /*we want our button to have a smooth transition hover*/
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--clr-white);
+    border-color: var(--clr-white);
+}
+
+.btn-primary {
+    background: var(--clr-red-dark);
+    /*this is for the text*/
+    color: var(--clr-white);
+}
+
+
+/**********************NavBar******************************/
+
+nav {
+    width: 100vw;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    /*it is gonna b positionned on top of every element that has a smaller z index*/
+    z-index: 11;
+}
+
+
+/* nav button {
+    display: none;
+} */
+
+.nav-toggle {
+    /* font-size: 2rem; */
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: all 0.3s linear;
+    color: aliceblue;
+    display: none;
+}
+
+.window-scroll {
+    background: var(--clr-red-dark);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.nav_container {
+    height: 100%;
+    /*align the elemnts horizontally*/
+    /* display: flex; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_container h4 {
+    font-size: 2rem;
+}
+
+.nav_menu {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.nav_menu a {
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.nav_menu a:hover {
+    color: #726D57;
+}
+
+h2
+/**********************Header******************************/
+
+header {
+    position: relative;
+    top: 5rem;
+    overflow: hidden;
+    margin-bottom: 5rem;
+    height: 90vh;
+}
+
+.header_container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 5rem;
+    align-items: center;
+    gap: 4rem;
+}
+
+.header_left p {
+    margin: 1rem 0 2.4rem;
+}
+
+.header_left {
+    text-align: center;
+}
+
+
+/**********************Categs******************************/
+
+.categories {
+    background: var(--clr-primary-2);
+    height: 30rem;
+}
+
+.categories_container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.categories_left p {
+    margin: 1rem 0 3rem;
+    line-height: 2;
+}
+
+.categories_right {
+    display: grid;
+    /* grid-template-columns: 33% 33% 34%;
+    grid-template-rows: 50% 50%; */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.3rem;
+}
+
+
+/*Modification pour la categorie elle meme*/
+
+.category {
+    background: var(--clr-grey-3);
+    padding: 2.3rem;
+    line-height: 1.2;
+    /*round labels apiprii */
+    border-radius: 2.5rem;
+    transition: var(--transition);
+}
+
+.category:hover {
+    /* top bottom l&r */
+    box-shadow: 0 2.4rem 3rem var(--clr-grey-5);
+    z-index: 1;
+}
+
+.category_icon {
+    background: #a4a7a8;
+    padding: 0.8rem;
+    border-radius: 1rem;
+}
+
+.category h5 {
+    margin: 2rem 0 1rem;
+}
+
+.category:nth-child(2) .category_icon {
+    /*on selcetionne la catégorie numero 2  avec nth child */
+    background-color: #e97478;
+}
+
+.category:nth-child(1) .category_icon {
+    /*on selcetionne la catégorie numero 2  avec nth child */
+    background-color: #b6c956;
+}
+
+.category:nth-child(3) .category_icon {
+    /*on selcetionne la catégorie numero 2  avec nth child */
+    background-color: #83adcd;
+}
+
+.category:nth-child(4) .category_icon {
+    /*on selcetionne la catégorie numero 2  avec nth child */
+    background-color: #12eae7;
+}
+
+.category:nth-child(5) .category_icon {
+    /*on selcetionne la catégorie numero 2  avec nth child */
+    background-color: #842cba;
+}
+
+.category:nth-child(6) .category_icon {
+    /*on selcetionne la catégorie numero 2  avec nth child */
+    background-color: #f36a01;
+}
+
+
+/*********************  Popular Courses********************************/
+
+.popular_courses {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    height: 57rem;
+    align-items: center;
+}
+
+.popular_courses_container {
+    line-height: 2;
+    display: grid;
+    /* grid-template-columns: 33% 33% 34%;
+    grid-template-rows: 50% 50%; */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.course {
+    text-align: center;
+    background: #5b6385;
+    border: 1px solid transparent;
+    /*round labels apiprii */
+    transition: var(--transition);
+}
+
+.course:hover {
+    background: transparent;
+    border-color: var(--clr-primary-2);
+}
+
+.course_info {
+    padding: 2rem 1rem 2rem;
+}
+
+.course_info h4 {
+    line-height: 2;
+    font-size: 1.3rem;
+    margin: 2rem 0 2rem;
+    /*change this when u do the resize*/
+    height: 7rem;
+}
+
+.course_info p {
+    line-height: 1.6;
+    margin: 1.2rem 0 2rem;
+}
+
+
+/******************************* FAQ ********************************/
+
+.faqs {
+    background: #302d3e;
+    box-shadow: inset 0 0 3rem var(--clr-grey-5);
+    margin: 15rem 0 2.5rem;
+}
+
+.faqs h1 {
+    text-align: center;
+}
+
+.faq_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 3.5rem;
+    gap: 2rem;
+}
+
+.faq {
+    background: var(--clr-red-dark);
+    padding: 2rem 2rem 1rem;
+    height: fit-content;
+    /*look this up*/
+    cursor: pointer;
+}
+
+.faq:hover {
+    background: var(--clr-red-2);
+}
+
+.faq p {
+    display: none;
+    padding-bottom: 1rem;
+}
+
+
+/* the class that we toggle to shpw the text */
+
+.faq.open p {
+    display: block;
+}
+
+.show_btn {
+    background: none;
+    font-size: 2rem;
+    color: var(--clr-white);
+    gap: 2rem;
+}
+
+.show_btn:hover {
+    color: var(--clr-grey-10);
+    transform: rotate(180deg);
+    transition: all 800ms ease;
+}
+
+.qi {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+}
+
+
+/* ****************Testimonals****************** */
+
+.testimonials_container {
+    /* overflow refers to any content that is too big for an element's box */
+    /*in order to hide the other elements on the scroll and shwo only two at a time*/
+    overflow-x: hidden;
+    /*related to it'w on position after adjusting right left bottom and top , it'll be adjusted from it's initial position other component will not be adjusted to fit any gap left by this element */
+    position: relative;
+    margin-bottom: 8rem;
+}
+
+.testimonial {
+    padding: 3rem 0 3rem;
+}
+
+.avatar {
+    width: 10rem;
+    height: 10rem;
+    /*  15px 50px 30px 5px; (first value applies to top-left corner, second value applies to top-right corner, third value applies to bottom-right corner, and fourth value applies to bottom-left corner): Border Radius */
+    /* border-radius: 100% 0% 100% 0% / 26% 70% 30% 74%; */
+    /* What is position relative and absolute in CSS?
+
+    position: relative places an element relative to its current position without changing the layout around it, whereas 
+
+    position: absolute places an element relative to its parent's position and changing the layout around it. */
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+    border: 1rem solid var(--clr-grey-5);
+}
+
+.testimonial_info {
+    text-align: center;
+}
+
+.testimonial_body {
+    background: #323251;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 100% 0% 100% 0% / 26% 70% 30% 74%;
+    /* relatiev to the parent itself */
+    position: relative;
+}
+
+.testimonial_body::before {
+    content: "";
+    /* gradient 
+    starts from the top de 135deg du rectangle 
+    de la couleur transparente 
+    a la couleur de testimonal body */
+    background: linear-gradient(135deg, transparent, #323251, transparent);
+    position: absolute;
+    left: 44%;
+    top: -1.5rem;
+    display: block;
+    width: 3rem;
+    height: 3.8rem;
+    transform: rotate(45deg);
+}
+
+footer {
+    background: var(--clr-primary-2);
+    padding-top: 5rem;
+    border-top: 1px solid var(--clr-grey-4);
+}
+
+.footer_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+    font-size: 1.2rem;
+}
+
+.footer_container h4 {
+    font-size: 1.5rem;
+}
+
+
+/* push the h4 from the div in the footer container */
+
+button .footer_container>div h4 {
+    margin-bottom: 1.2rem;
+}
+
+.footer_1 p {
+    padding-right: 4rem;
+}
+
+.footer_1 h4 {
+    color: var(--clr-white);
+}
+
+footer ul li {
+    margin-bottom: 0.7rem;
+}
+
+
+/* a : the links */
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer_socials {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 3rem 0;
+}
+
+.footer_copyrights {
+    background: #353552;
+    text-align: center;
+    margin-top: 4rem;
+    border-top: 1px solid var(--clr-grey-4);
+    line-height: 3;
+}
+
+
+/* ********************Responsive Design For Tablets ***********************/
+
+
+/* anything below 1024 */
+
+@media screen and (max-width:1024px) {
+    /* 
+    transform prperty 
+    translate ansd its types
+    animations ... */
+    .container {
+        width: var(--container-width-md);
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    h3 {
+        font-size: 1.4rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    /**************navbar****************/
+    .nav_menu {
+        /*sa position est fixe elle est tjr au debut de la page*/
+        position: fixed;
+        flex-direction: column;
+        height: fit-content;
+        width: 18rem;
+        top: 5rem;
+        right: 5%;
+        gap: 0rem;
+        display: none;
+    }
+    .nav-toggle {
+        display: block;
+    }
+    .show-links {
+        display: flex;
+    }
+    .nav_menu li {
+        width: 100%;
+        height: 5.8rem;
+        /* originally it spins from the middle */
+        animation: animationNavItems 200ms linear forwards;
+        /* we want it to spin from the top  */
+        transform-origin: top right;
+        opacity: 0;
+    }
+    .nav_menu li a {
+        background: var(--clr-primary-2);
+        box-shadow: -4rem 6rem 10rem var(--clr-black);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+    .nav_menu li a:hover {
+        background: var(--clr-grey-5);
+        color: #3b294f;
+    }
+    /* So that it all doesn't pop up at once */
+    .nav_menu li:nth-child(2) {
+        animation-delay: 600ms;
+    }
+    .nav_menu li:nth-child(3) {
+        animation-delay: 800ms;
+    }
+    .nav_menu li:nth-child(4) {
+        animation-delay: 900ms;
+    }
+    @keyframes animationNavItems {
+        0% {
+            transform: rotateZ(-90deg) rotateX(90deg) scale(0.1);
+        }
+        100% {
+            transform: rotateZ(0) rotateX(0) scale(1);
+            opacity: 1;
+        }
+    }
+    /* ****************** Header  ************** */
+    header {
+        margin-bottom: 7rem;
+        line-height: 1;
+    }
+    /* ************ Categories **************** */
+    .categories {
+        height: auto;
+    }
+    .categories_container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .categories_right {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin: 2rem auto 3rem;
+    }
+    .categories_left {
+        text-align: center;
+    }
+    /* *************Popular Courses******************* */
+    .popular_courses {
+        padding: 0rem 0rem 0rem;
+        /* padding-bottom: 0rem; */
+        height: min-content;
+    }
+    .popular_courses_container {
+        grid-template-columns: 1fr 1fr;
+    }
+    /* *************** FAQs*************** */
+    .faqs {
+        padding: 5rem 2rem 8rem;
+    }
+    .faq_container {
+        grid-template-columns: 1fr;
+        gap: 0rem;
+    }
+    /* ************ Footer ********** */
+    .footer_container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .container {
+        width: var(--container-width-sm);
+    }
+    .nav_menu {
+        right: 3%;
+    }
+    header {
+        height: 125vh;
+    }
+    .header_container {
+        grid-template-columns: 1fr;
+        margin-top: 4rem;
+        height: fit-content;
+    }
+    .popular_courses {
+        margin-top: 7rem;
+    }
+    .popular_courses_container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .course_info {
+        padding: 1.5rem 1rem 1.5rem;
+    }
+    .course_info h4 {
+        line-height: 1.5;
+        margin: 1rem 0 1rem;
+        /*change this when u do the resize*/
+        height: 5rem;
+    }
+    .faqs {
+        margin-top: 0;
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+    .faq_container {
+        gap: 1rem;
+    }
+    .footer_container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer_container>div h4 {
+        margin-bottom: 1rem;
+    }
+    .footer_1 p {
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+    .footer_socials {
+        justify-content: center;
+    }
+}

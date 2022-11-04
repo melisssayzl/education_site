@@ -1,0 +1,195 @@
+:root {
+    --color-primary: #241338;
+    /* dark shades of primary color*/
+    --clr-primary-1: #4C536D;
+    --clr-primary-2: #373c4f;
+    --clr-primary-3: #374474;
+    --clr-primary-4: hsl(205, 63%, 48%);
+    /* primary/main color */
+    --clr-primary-5: hsl(205, 78%, 60%);
+    /* lighter shades of primary color */
+    --clr-primary-6: hsl(205, 89%, 70%);
+    --clr-primary-7: hsl(205, 90%, 76%);
+    --clr-primary-8: hsl(205, 86%, 81%);
+    --clr-primary-9: hsl(205, 90%, 88%);
+    --clr-primary-10: hsl(205, 100%, 96%);
+    /* darkest grey - used for headings */
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(262, 55%, 42%);
+    /* grey used for paragraphs */
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(210, 36%, 96%);
+    --clr-white: #fff;
+    --clr-red-dark: #a30a0f;
+    --clr-red-2: #c6181e;
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black: #222;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+    --container-width-lg: 76%;
+    /*big screen*/
+    --container-width-md: 90%;
+    /*tablette*/
+    --container-width-sm: 94%;
+    /*phone*/
+    --ff-primary: 'Poppins', sans-serif;
+    --transition: all 400ms ease;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+}
+
+.contact_container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    color: #1652C0;
+    background: #8dabcb;
+    border-radius: 2rem;
+    padding: 4rem;
+    margin: 20rem auto;
+    height: 41vh;
+    gap: 3rem;
+}
+
+.contact_aside {
+    background: var(--clr-white);
+    border-radius: 2rem;
+    justify-content: center;
+    /* relative a la page */
+    position: relative;
+    padding: 2rem;
+    bottom: 15rem;
+}
+
+li {
+    display: flex;
+    gap: 1.8rem;
+}
+
+.contact_aside h2 {
+    padding-top: 2rem;
+    color: #E33942;
+    margin-bottom: 0rem;
+}
+
+.contact_aside p {
+    line-height: 1.6;
+    padding: 2rem 0 2rem;
+}
+
+.contact_list a {
+    font-size: 1.2rem;
+    color: red;
+}
+
+.contact_socials {
+    display: flex;
+    padding: 2rem 0 1rem;
+    justify-content: center;
+    transition: var(--transition);
+    gap: 0.8rem;
+}
+
+.contact_socials a {
+    padding: 0.4rem;
+    border-radius: 50%;
+    background-color: #FF5353;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 2rem;
+    gap: 1rem;
+}
+
+
+/* this is how to acccess the input type */
+
+form input[type="text"] {
+    width: 50%;
+}
+
+.form_name {
+    display: flex;
+    gap: 0.8rem;
+}
+
+input {
+    background: var(--clr-primary-1);
+    border-radius: 0.5rem;
+    color: var(--clr-white);
+}
+
+input,
+textarea {
+    background: var(--clr-primary-1);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: var(--clr-white);
+}
+
+::placeholder {
+    color: var(--clr-white);
+}
+
+.btn-primary {
+    /* in order to make the button fit the content */
+    width: max-content;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+@media screen and (max-width:1024px) {
+    .contact_container {
+        grid-template-columns: 45% 55%;
+        gap: 1rem;
+        padding: 2rem
+    }
+    .contact_aside {
+        padding: 1rem;
+        bottom: 9rem;
+    }
+    li {
+        gap: 0.5rem;
+    }
+    .contact_list a {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .contact_container {
+        margin: 3rem auto 2rem;
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 3rem;
+    }
+    .contact_aside {
+        top: 0rem;
+    }
+    .form_name {
+        flex-direction: column;
+        width: 100%;
+    }
+    form input[type="text"] {
+        width: 100%;
+    }
+    .btn-primary {
+        margin-top: 2rem;
+        align-self: center;
+    }
+    footer {
+        align-items: center;
+    }
+}

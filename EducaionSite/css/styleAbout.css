@@ -1,0 +1,246 @@
+/* *****************About page css **************************** */
+
+:root {
+    --color-primary: #241338;
+    /* dark shades of primary color*/
+    --clr-primary-1: #4C536D;
+    --clr-primary-2: #373c4f;
+    --clr-primary-3: #374474;
+    --clr-primary-4: hsl(205, 63%, 48%);
+    /* primary/main color */
+    --clr-primary-5: hsl(205, 78%, 60%);
+    /* lighter shades of primary color */
+    --clr-primary-6: hsl(205, 89%, 70%);
+    --clr-primary-7: hsl(205, 90%, 76%);
+    --clr-primary-8: hsl(205, 86%, 81%);
+    --clr-primary-9: hsl(205, 90%, 88%);
+    --clr-primary-10: hsl(205, 100%, 96%);
+    /* darkest grey - used for headings */
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(262, 55%, 42%);
+    /* grey used for paragraphs */
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(210, 36%, 96%);
+    --clr-white: #fff;
+    --clr-red-dark: #a30a0f;
+    --clr-red-2: #c6181e;
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black: #222;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+    --container-width-lg: 76%;
+    /*big screen*/
+    --container-width-md: 90%;
+    /*tablette*/
+    --container-width-sm: 94%;
+    /*phone*/
+    --ff-primary: 'Poppins', sans-serif;
+    --transition: all 400ms ease;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+}
+
+
+/* ************ Achievements Section ********************** */
+
+.achievements {
+    margin-top: 3rem;
+}
+
+.achievements_container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    gap: 5rem;
+}
+
+.achievement_right p {
+    margin: 1.6rem 0 2.5rem;
+}
+
+.achievement_right_bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+
+/* la modification pour 'card of the achievement' */
+
+.card {
+    background: var(--clr-grey-3);
+    padding: 1.6rem;
+    border-radius: 2rem;
+    transition: var(--transition);
+    text-align: center;
+    /* if we set a width to thisi won't resize when we resiz the window */
+}
+
+.card:hover {
+    /* see how it works */
+    background: var(--clr-grey-5);
+    box-shadow: 0 2.8rem 3rem var(--clr-grey-2);
+    z-index: 1;
+}
+
+.card_icon {
+    border-radius: 1rem;
+    padding: 0.2rem;
+    background: rgb(232, 149, 118);
+    font-size: 2rem;
+}
+
+.card h3 {
+    margin-top: 2rem;
+}
+
+.card:nth-child(2) .card_icon {
+    background: rgb(216, 203, 89);
+}
+
+.card:nth-child(3) .card_icon {}
+
+
+/* ************************   TEAM   *************** */
+
+.team {
+    background: hsl(215, 23%, 33%);
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.3);
+}
+
+.team h1 {
+    text-align: center;
+    margin: 3rem 0 6rem;
+}
+
+.team_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    /* look this up */
+}
+
+.memeber {
+    /* in order to cosigure the position of the socials */
+    position: relative;
+    background: hsl(215, 23%, 44%);
+    border-radius: 2rem;
+    padding: 2rem;
+    border: 2px solid transparent;
+    transition: var(--transition);
+    /* we won't be able to see the socials */
+    overflow: hidden;
+}
+
+.memeber_info {
+    text-align: center;
+}
+
+.memeber:hover {
+    background: hsl(215, 23%, 33%);
+    border-color: hsl(215, 23%, 44%);
+}
+
+.memeber h3 {
+    margin: 4rem 0 1rem;
+}
+
+.image_member {
+    border-radius: 1.5rem;
+    /* si on onleve hidden ca ne marche pas */
+    overflow: hidden;
+    margin: 0 auto 1rem;
+    /* border: 1rem solid var(--clr-grey-5); */
+}
+
+.image_member img {
+    /* en noir et blanc  : look thsi up for more details */
+    filter: saturate(0);
+}
+
+.memeber:hover .image_member img {
+    /* when we hover the card the image ha sits own colors back */
+    filter: saturate(1);
+}
+
+.memeber:hover .team_socials {
+    right: 0%;
+}
+
+.team_socials {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* this makes them go off the screen too
+    transform: translateX(2000px); */
+    /* it makes the socials go off the screen try -80 advinen chwiya */
+    right: -100%;
+    /* so that it'd be in the center without translate */
+    /* top: 30%; */
+    /* right: 0; */
+    display: flex;
+    flex-direction: column;
+    background: var(--clr-red-dark);
+    /* top left1 top right 0 bottom right 0 bottom left 1  */
+    border-radius: 1rem 0 0 1rem;
+    /* X,Y,? */
+    box-shadow: -2rem 0 2rem rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+
+.team_socials a {
+    padding: 1rem;
+}
+
+
+/* ************************* Media query for tablets *********************** */
+
+@media screen and (max-width:1024px) {
+    .container {
+        width: var(--container-width-md);
+    }
+    .achievements_container {
+        grid-template-columns: 1fr;
+    }
+    .achievement_left {
+        margin: 0rem auto 0;
+    }
+    .achievement_right {
+        text-align: center;
+    }
+    .team {
+        padding-top: 3rem;
+    }
+    .team h1 {
+        margin: 3rem 0 5rem;
+    }
+    .team_container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .team h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .container {
+        width: var(--container-width-sm);
+    }
+    .team_container {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    .memeber h3 {
+        margin: 2rem 0 1rem;
+    }
+}
